@@ -4,7 +4,7 @@ require_relative "lib/aoc/version"
 
 Gem::Specification.new do |spec|
   spec.name = "aoc"
-  spec.version = Aoc::VERSION
+  spec.version = AOC::VERSION
   spec.authors = ["alexpeachey"]
   spec.email = ["alex.peachey@gmail.com"]
 

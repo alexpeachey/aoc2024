@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe Aoc do
+RSpec.describe AOC do
   it "has a version number" do
-    expect(Aoc::VERSION).not_to be nil
-  end
-
-  it "does something useful" do
-    expect(false).to eq(true)
+    expect(AOC::VERSION).not_to be nil
   end
 end
