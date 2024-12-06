@@ -1,7 +1,7 @@
 module AOC
   class Day01a < Day
     def list_distance
-      File.readlines(@path, chomp: true)
+      @input
         .map(&method(:parse))
         .then(&method(:sort))
         .map(&method(:distance))

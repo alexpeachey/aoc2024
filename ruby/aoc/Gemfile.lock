@@ -7,6 +7,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    curses (1.4.7)
     diff-lcs (1.5.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
@@ -70,6 +71,7 @@ PLATFORMS
 
 DEPENDENCIES
   aoc!
+  curses (~> 1.4)
   rake (~> 13.0)
   rspec (~> 3.0)
   standard (~> 1.3)

@@ -1,7 +1,7 @@
 module AOC
   class Day03a < Day
     def run
-      File.readlines(@path, chomp: true)
+      @input
         .join("")
         .then(&method(:parse_mul_instructions))
         .map(&method(:multiply))

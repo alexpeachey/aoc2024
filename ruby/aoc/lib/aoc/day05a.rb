@@ -2,25 +2,25 @@ module AOC
   class Day05a < Day
     def sum_valid_middles
       rules, _, print_orders =
-        File.readlines(@path, chomp: true)
+        @input
           .chunk { |line| line.empty? }
           .map { |_, lines| lines }
       
-      rules = parse_rules(rules)
-      print_orders = parse_print_orders(print_orders)
+      @rules = parse_rules(rules)
+      @print_orders = parse_print_orders(print_orders)
 
-      print_orders
-        .filter { |order| valid?(order, rules) }
+      @print_orders
+        .filter(&method(:valid?))
         .map(&method(:middle))
         .sum
     end
 
     private
 
-    def valid?(order, rules)
+    def valid?(order)
       (0...order.size).all? do |i|
-        order[0,i].all? { |p| rules.include?([p, order[i]]) } &&
-        order[i+1..].all? { |p| rules.include?([order[i], p]) }
+        order[0,i].all? { |p| @rules.include?([p, order[i]]) } &&
+        order[i+1..].all? { |p| @rules.include?([order[i], p]) }
       end
     end
 
@@ -37,7 +37,7 @@ module AOC
     def parse_print_orders(print_orders)
       print_orders
         .map { |order| order.split(',') }
-        .map { |rule| rule.map(&:to_i) }
+        .map { |order| order.map(&:to_i) }
     end
   end
 end

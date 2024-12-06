@@ -1,7 +1,7 @@
 module AOC
   class Day02a < Day
     def safe_reports
-      File.readlines(@path, chomp: true)
+      @input
         .map(&method(:parse))
         .filter(&method(:safe?))
         .count
